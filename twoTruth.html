@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Two Truths and a Lie</title>
+    <!--bootstrap5 import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--header-->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+          <span class="navbar-brand mb-0 h1">Two Truths and a Lie</span>
+        </div>
+      </nav>
+
+    <!--List of options-->
+    <div class="list-group mx-auto" style="width: 40%;">
+        <li class="list-group-item list-group-item-primary">Pick which one you think is the lie!</li>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-secondary">I can do a backflip<img src="https://qph.fs.quoracdn.net/main-qimg-436acc542b699348edca1a2e922097b2.webp" alt="A red X" style="height: 20px; display:none;"></button>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-success">I have never left the country<img src="https://qph.fs.quoracdn.net/main-qimg-436acc542b699348edca1a2e922097b2.webp" alt="A red X" style="height: 20px; display:none;"></button>
+        <button type="button" class="list-group-item list-group-item-action list-group-item-info">I have been skydiving<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Checkmark.svg/1200px-Checkmark.svg.png" alt="A green check" style="height: 20px; display:none;"></button>
+      </div>
+    <div class="explained mx-auto" id="explained" style="width: 40%; margin-top:20px; display: none;">
+        <p>Yes I can do a backflip</p>
+    </div>
+    <script>
+        //adds loops to add event listeners to 3 buttons and show the correct image
+        var x = document.getElementsByTagName("button");
+        var y = document.getElementsByTagName("img")
+        for(var i=0; i < x.length; i++) {
+                x[i].addEventListener("click", function() {
+                    for (var j=0; j < y.length; j++) {
+                        y[j].style.display = "inline";
+                    }
+                    document.getElementById('explained').style.display = "block";
+                    x[0].className += " shadow mb-3 bg-body rounded";
+                    x[1].className += " shadow mb-3 bg-body rounded";
+                    x[2].className += " list-group-item-dark";
+            });
+            
+        }
+    </script>
+</body>
+</html>
